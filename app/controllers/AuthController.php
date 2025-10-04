@@ -36,9 +36,9 @@ public function register()
 
             // ✅ Redirect based on role
             if ($role === 'admin') {
-                redirect('users'); // admin → table page
+                redirect('users'); // admin → users management page
             } else {
-                redirect('users'); // user → dashboard
+                redirect('welcome'); // user → welcome page
             }
             
         } else {
