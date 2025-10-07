@@ -184,6 +184,18 @@
       </table>
     </div>
   </div>
+   <!-- Pagination -->
+  <?php if (!empty($page)): ?>
+      <div class="pagination">
+          <?= $page ?>
+      </div>
+  <?php endif; ?>
+  <!-- Logout Button -->
+    <a href="<?= site_url('auth/logout'); ?>" 
+     class="btn-logout" onclick="return confirm('Are you sure you want to log out?');">
+      Logout</a>
+    </a>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

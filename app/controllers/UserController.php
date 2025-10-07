@@ -10,10 +10,39 @@ class UserController extends Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->call->library('pagination');
+        $this->call->library('auth');
     }
     public function index()
     {
-        $data['users'] = $this->UserModel->all();
+        $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+        $q = isset($_GET['q']) ? trim($_GET['q']) : '';
+
+        $records_per_page = 5;
+        $result = $this->UserModel->page($q, $records_per_page, $page);
+
+        $this->pagination->set_options([
+            'first_link'     => '⏮ First',
+            'last_link'      => 'Last ⏭',
+            'next_link'      => 'Next →',
+            'prev_link'      => '← Prev',
+            'page_delimiter' => '&page='
+        ]);
+
+        $this->pagination->initialize(
+            $result['total_rows'], 
+            $records_per_page, 
+            $page, 
+            'users?q='.$q
+        );
+
+        $data = [
+            'users' => $result['records'],
+            'page'  => $this->pagination->paginate(),
+            'q'     => $q
+        ];
+
+        $data['auth'] = $this->auth; // 🔹 Pass auth object to view
         $this->call->view('user/view', $data);
     }
     public function create()
