@@ -13,7 +13,6 @@
     <div class="container d-flex align-items-center">
       <a class="brand" href="/">⚡ CRUD</a>
       <div class="nav-actions ms-auto">
-        <a href="<?= site_url('user'); ?>">Users</a>
         <a href="<?= site_url('auth/logout'); ?>" onclick="return confirm('Are you sure you want to log out?');">Logout</a>
       </div>
     </div>
@@ -40,7 +39,6 @@
       </div>
 
       <div class="dash-actions">
-        <a class="btn btn-outline" href="<?= site_url('user'); ?>">Open User List</a>
         <a class="btn btn-outline" href="<?= site_url('auth/logout'); ?>" onclick="return confirm('Are you sure you want to log out?');">Logout</a>
       </div>
     </div>
