@@ -53,6 +53,7 @@
             <option value="admin">Admin</option>
           </select>
         </div>
+        <buuton type="submit" class="btn btn-primary">Register</button>
       </form>
 
       <span class="muted-link">Already have an account? <a href="<?= site_url('auth/login'); ?>">Login</a></span>
