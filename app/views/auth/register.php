@@ -13,7 +13,7 @@
     <div class="container d-flex align-items-center">
       <a class="brand" href="/">CRUD</a>
       <div class="nav-actions ms-auto">
-        <a href="<?= site_url('auth/login'); ?>">Login</a>
+      
       </div>
     </div>
   </nav>

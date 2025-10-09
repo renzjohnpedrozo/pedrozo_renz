@@ -11,9 +11,8 @@
 <body>
   <nav class="navbar d-flex align-items-center">
     <div class="container d-flex align-items-center">
-      <a class="brand" href="/">⚡ CRUD</a>
+      <a class="brand" href="/">CRUD</a>
       <div class="nav-actions ms-auto">
-        <a href="<?= site_url('auth/register'); ?>">Register</a>
       </div>
     </div>
   </nav>
